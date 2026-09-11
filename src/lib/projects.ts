@@ -1,0 +1,87 @@
+// ─── Projects. TO UPDATE: add/remove an entry, keep the shape. ──
+// Shown on the homepage (#projects) and on /projects/[slug].
+// status: "live" | "building" | "experiment"
+// Only use links that actually exist. Leave a link out instead of guessing.
+
+export type ProjectStatus = "live" | "building" | "experiment";
+
+export type Project = {
+  slug: string;
+  title: string;
+  tagline: string;
+  status: ProjectStatus;
+  statusLabel: string;
+  stack: string[];
+  links: { label: string; href: string }[];
+  github?: string;
+  body: string[];
+  highlights: string[];
+};
+
+export const statusDot: Record<ProjectStatus, string> = {
+  live: "bg-emerald-400",
+  building: "bg-amber-400",
+  experiment: "bg-zinc-400",
+};
+
+export const projects: Project[] = [
+  {
+    slug: "four04",
+    title: "four04.de",
+    tagline: "My own little web + infrastructure ecosystem.",
+    status: "live",
+    statusLabel: "live — maintained",
+    stack: ["Cloudflare", "Cloudflare Tunnel", "Linux", "Docker", "Raspberry Pi"],
+    links: [{ label: "four04.de", href: "https://four04.de" }],
+    body: [
+      "four04.de is where my web projects and my home infrastructure meet. I run small sites myself and learn how DNS, tunnels and containers fit together.",
+      "Nothing enterprise-grade — a setup I built, broke a few times, and keep improving. That's kind of the point.",
+    ],
+    highlights: [
+      "Cloudflare DNS + Tunnel for safe remote access without port forwarding",
+      "Docker services on Linux, maintained by me",
+      "Hosts my experiments and links everything together",
+    ],
+  },
+  {
+    slug: "portfolio",
+    title: "Portfolio",
+    tagline: "This site — built and maintained by me.",
+    status: "building",
+    statusLabel: "you're looking at it",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
+    links: [],
+    github: "https://github.com/3u2t/portfolio",
+    body: [
+      "My portfolio itself is one of my projects. Next.js + TypeScript + Tailwind, deployed on Vercel with a Docker fallback for my Pi.",
+      "I keep it honest: no fake experience, no invented stats. GitHub data loads live, and if the API is down it shows placeholders instead of fake numbers.",
+    ],
+    highlights: [
+      "App Router + TypeScript, component-based",
+      "Live GitHub section with graceful fallback",
+      "Standalone output so it also runs in Docker on ARM",
+    ],
+  },
+  {
+    slug: "pi-home-server",
+    title: "Raspberry Pi Home Server",
+    tagline: "My homelab: self-hosted services on a Pi 4.",
+    status: "live",
+    statusLabel: "running at home",
+    stack: ["Raspberry Pi 4 8GB", "Debian", "Docker", "CasaOS", "Cloudflare Tunnel", "SSH"],
+    links: [],
+    body: [
+      "A Raspberry Pi 4 (8GB) running Debian/Raspberry Pi OS with Docker and CasaOS, plus an external HDD for storage. Remote access goes through Cloudflare Tunnel — no open ports — and SSH for admin.",
+      "I treat it as infrastructure, not an app list: updates, backups, and figuring out why something stopped at 11pm is the actual hobby.",
+    ],
+    highlights: [
+      "Services I run: Jellyfin, Immich, Vaultwarden, Portainer, ConvertX, MySpeed, cloudflared",
+      "External HDD storage, CasaOS + Portainer for management",
+      "Cloudflare Tunnel + SSH, basic home networking",
+    ],
+  },
+];
+
+export function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}

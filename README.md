@@ -124,7 +124,7 @@ Key files in detail:
 - `src/proxy.ts` — bot-UA 403 for the whole site (see Bot protection).
   Name and export follow the Next 16 `proxy` convention, not `middleware`.
 - `src/app/api/health` — site beacon (see Site beacon). Needs no env to
-  run; `DISCORD_WEBHOOK_URL` enables delivery.
+  run.
 - `src/lib/projects.ts` — the project source of truth: slug, title,
   tagline, `live | building | experiment` status, stack badges, real links
   only, body paragraphs, highlights. Comment at the top explains the shape.
@@ -164,17 +164,11 @@ npm run dev
 
 Open http://localhost:3000.
 
-**Environment variables:** none required to run. The app calls the public
-GitHub API server-side without authentication. One optional variable exists:
-
-| Variable | Purpose | Required? |
-| -------- | ------- | --------- |
-| `DISCORD_WEBHOOK_URL` | Delivery target for the site beacon (`/api/health`) | No — without it, delivery is skipped silently |
-
-Set it in the Vercel dashboard (Project → Settings → Environment Variables)
-or as docker env (`-e DISCORD_WEBHOOK_URL=…` on the Pi). Never commit it —
-`.env.local` (gitignored) is the local-only place for it, and no other
-variables are read by the code.
+**Environment variables:** none. The app calls the public GitHub
+API server-side without authentication, and every route runs without
+configuration. Local-only secrets (if you ever add any) belong in
+`.env.local` (gitignored) — never commit them, and never invent variables
+the code doesn't read.
 
 Production check locally:
 
@@ -275,8 +269,6 @@ Lightweight page-view beacon:
 - `GET /api/health` answers with a 1×1 transparent GIF, dedupes per IP
   (60s, best-effort in-memory — per-instance on serverless), and 403s the
   same bot user-agents as the proxy.
-- With `DISCORD_WEBHOOK_URL` set, visits are enriched and forwarded for
-  notifications. Without it, the endpoint just returns the GIF.
 - Fired once per page load by `<SiteBeacon />` in the root layout.
 - A one-line disclosure lives in the footer. Note: visitor IPs are
   personal data under GDPR — keep the disclosure, and add a proper privacy
@@ -396,9 +388,9 @@ Do not redesign the website. Extend in the same language.
   clients that look automated (e.g. curl with a faked UA, datacenter IPs).
   Real browsers solve the checkpoint invisibly; verify with an actual
   browser, not curl.
-- **No beacon notifications:** `DISCORD_WEBHOOK_URL` is not set in
-  that environment, the visitor reloaded within 60s (dedup), or the IP is
-  local/unknown. Check server logs and `GET /api/health` status directly.
+- **Beacon answers but nothing is recorded:** the visitor reloaded within
+  60s (dedup), or the IP is local/unknown. Check server logs and
+  `GET /api/health` status directly.
 - **`cloudflared` login on a headless Pi:** run `cloudflared tunnel login`
   from a machine with a browser and copy only the resulting `cert.pem` to
   the Pi via a secure channel; never commit it.

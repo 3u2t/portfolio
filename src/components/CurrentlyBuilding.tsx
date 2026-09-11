@@ -10,7 +10,7 @@ const dot: Record<string, string> = {
 
 export default function CurrentlyBuilding() {
   return (
-    <section aria-label="Currently building" className="border-y border-white/[0.06] bg-white/[0.015]">
+    <section id="now" aria-label="Currently building" className="scroll-mt-20 border-y border-white/[0.06] bg-white/[0.015]">
       <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8">
         <SectionHeading
           kicker="now"

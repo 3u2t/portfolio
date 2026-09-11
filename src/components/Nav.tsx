@@ -61,17 +61,29 @@ export default function Nav() {
           </li>
         </ul>
 
-        <button
-          type="button"
-          className="flex size-10 items-center justify-center rounded-md border border-white/10 text-zinc-300 md:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span aria-hidden className="font-mono text-lg leading-none">
-            {open ? "×" : "≡"}
-          </span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            aria-label="Open command palette"
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("open-palette"))
+            }
+            className="hidden items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:border-emerald-400/40 hover:text-emerald-300 sm:flex"
+          >
+            <span aria-hidden>⌘K</span>
+          </button>
+          <button
+            type="button"
+            className="flex size-10 items-center justify-center rounded-md border border-white/10 text-zinc-300 md:hidden"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span aria-hidden className="font-mono text-lg leading-none">
+              {open ? "×" : "≡"}
+            </span>
+          </button>
+        </div>
       </nav>
 
       {open ? (

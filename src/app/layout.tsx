@@ -4,6 +4,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SiteBeacon from "@/components/SiteBeacon";
+import CommandPalette from "@/components/CommandPalette";
+import Konami from "@/components/Konami";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -97,6 +99,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <Nav />
         <SiteBeacon />
+        <CommandPalette />
+        <Konami />
         <main id="main" className="flex-1">
           {children}
         </main>

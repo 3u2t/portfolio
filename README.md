@@ -70,6 +70,12 @@ Everything below is implemented — nothing speculative:
 - Docker deployment via multi-stage `Dockerfile` (`node:20-alpine`,
   non-root user, ARM64-compatible for Raspberry Pi)
 - `.dockerignore` to keep the build context lean
+- Command palette (`Cmd/Ctrl+K` or the `⌘K` button): fuzzy search over
+  sections, projects and actions (copy links, open GitHub)
+- Konami easter egg (`↑↑↓↓←→←→BA`): toast with aura counter, persisted in
+  localStorage, ignored inside inputs
+- Homelab service cards: click to expand per-service details (accessible
+  accordion with `aria-expanded`)
 - Bot blocking in `src/proxy.ts` (scraper user-agents get 403, same list as
   the site beacon) + security headers in `vercel.json`
 - Site beacon at `/api/health` (rate-limited, delivery optional via env)
@@ -96,6 +102,7 @@ portfolio/
 │   │   ├── Nav / Hero / TerminalVisual / About / CurrentlyBuilding
 │   │   ├── Projects / Stack / Homelab / AiWorkflow / BeyondSoftware
 │   │   ├── GithubSection / Contact / Footer / SiteBeacon
+│   │   ├── CommandPalette / Konami (global: layout-mounted)
 │   │   └── Reveal / SectionHeading / Badge / StatusDot (primitives)
 │   └── lib/                # ★ content lives here — edit these files
 │       ├── projects.ts     # project cards + detail pages (see below)

@@ -30,7 +30,7 @@ export default function GithubSection() {
   }, []);
 
   return (
-    <section aria-label="GitHub" className="border-t border-white/[0.06]">
+    <section id="github" aria-label="GitHub" className="scroll-mt-20 border-t border-white/[0.06]">
       <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8">
         <SectionHeading
           kicker="github"

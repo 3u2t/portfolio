@@ -30,6 +30,12 @@ const services = [
       "Docker dashboard for when SSH feels like too much typing. (It's never too much typing.)",
   },
   {
+    name: "Home Assistant",
+    desc: "smart home",
+    detail:
+      "My smart home brain. Automations, sensors and dashboards — all local, all mine.",
+  },
+  {
     name: "ConvertX",
     desc: "file conversion",
     detail:

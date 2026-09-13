@@ -29,7 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://four04.de"),
+  metadataBase: new URL(site.website),
   title: {
     default: "Tom — Developer & Homelab Enthusiast",
     template: "%s · Tom",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en",
-    url: "https://four04.de",
+    url: site.website,
     siteName: "Tom — Developer & Homelab",
     title: "Tom — Building things with code, Linux & curiosity",
     description:
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Tom",
-              url: "https://four04.de",
+              url: site.website,
               sameAs: [site.github],
               description:
                 "Young developer from Germany interested in web development, Linux, self-hosting and hardware.",

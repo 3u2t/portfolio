@@ -25,7 +25,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="transition-colors hover:text-emerald-300"
           >
-            four04.de
+            {site.websiteLabel}
           </a>
           <span className="text-zinc-700">© {year} Tom</span>
         </div>

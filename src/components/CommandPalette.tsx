@@ -41,7 +41,7 @@ export function buildEntries(): PaletteEntry[] {
     { id: "copy-github", kind: "action", label: "Copy GitHub URL", hint: site.github, keywords: "copy github link url", copy: site.github },
     { id: "copy-email", kind: "action", label: "Copy email (placeholder)", hint: site.emailPlaceholder, keywords: "copy email mail contact", copy: site.emailPlaceholder },
     { id: "open-github", kind: "action", label: "Open GitHub profile", hint: "↗", keywords: "open github profile external", external: site.github },
-    { id: "open-site", kind: "action", label: "Open four04.de", hint: "↗", keywords: "open website four04 external", external: site.website },
+    { id: "open-site", kind: "action", label: "Open Website", hint: "↗", keywords: "open website external", external: site.website },
   ];
   return [...sections, ...projectEntries, ...actions];
 }

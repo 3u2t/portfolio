@@ -26,20 +26,20 @@ export const statusDot: Record<ProjectStatus, string> = {
 
 export const projects: Project[] = [
   {
-    slug: "four04",
-    title: "four04.de",
-    tagline: "My own little web + infrastructure ecosystem.",
+    slug: "infra",
+    title: "Private Infrastructure",
+    tagline: "My personal domain + self-hosted ecosystem.",
     status: "live",
     statusLabel: "live — maintained",
     stack: ["Cloudflare", "Cloudflare Tunnel", "Linux", "Docker", "Raspberry Pi"],
-    links: [{ label: "four04.de", href: "https://four04.de" }],
+    links: [],
     body: [
-      "four04.de is where my web projects and my home infrastructure meet. I run small sites myself and learn how DNS, tunnels and containers fit together.",
-      "Nothing enterprise-grade — a setup I built, broke a few times, and keep improving. That's kind of the point.",
+      "My private domain and homelab are where my web projects and infrastructure meet. I run services myself and learn how DNS, tunnels and containers fit together.",
+      "Nothing enterprise-grade — a setup I built, broke a few times, and keep improving. That's kind of the point. Domain is private for security.",
     ],
     highlights: [
-      "Cloudflare DNS + Tunnel for safe remote access without port forwarding",
-      "Docker services on Linux, maintained by me",
+      "Cloudflare Tunnel for safe remote access without port forwarding — no open ports",
+      "Docker services on Linux, maintained by me (incl. Home Assistant for smart home)",
       "Hosts my experiments and links everything together",
     ],
   },
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       "I treat it as infrastructure, not an app list: updates, backups, and figuring out why something stopped at 11pm is the actual hobby.",
     ],
     highlights: [
-      "Services I run: Jellyfin, Immich, Vaultwarden, Portainer, ConvertX, MySpeed, cloudflared",
+      "Services I run: Jellyfin, Immich, Home Assistant, Vaultwarden, Portainer, ConvertX, MySpeed, cloudflared",
       "External HDD storage, CasaOS + Portainer for management",
       "Cloudflare Tunnel + SSH, basic home networking",
     ],

@@ -165,7 +165,7 @@ export async function GET(req: Request) {
             { name: "Path", value: path, inline: true },
             { name: "Timestamp", value: new Date().toISOString(), inline: false },
           ],
-          footer: { text: "four04.de" },
+          footer: { text: "homelab" },
         },
       ],
     };

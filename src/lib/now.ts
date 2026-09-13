@@ -9,8 +9,8 @@ export type NowItem = {
 
 export const nowItems: NowItem[] = [
   {
-    title: "four04.de ecosystem",
-    detail: "Small web projects + Tunnel/Docker setup, kept tidy.",
+    title: "personal infrastructure",
+    detail: "Private domain + Tunnel/Docker setup, kept tidy.",
     status: "ongoing",
   },
   {

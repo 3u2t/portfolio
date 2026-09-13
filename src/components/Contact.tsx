@@ -43,7 +43,7 @@ export default function Contact() {
               className="rounded-xl border border-white/[0.08] bg-[#111113] p-5 transition-colors hover:border-emerald-400/25"
             >
               <p className="font-mono text-xs text-zinc-500">website</p>
-              <p className="mt-1 font-medium text-zinc-100">four04.de ↗</p>
+              <p className="mt-1 font-medium text-zinc-100">{site.websiteLabel} ↗</p>
             </a>
           </div>
         </Reveal>

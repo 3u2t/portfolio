@@ -57,5 +57,5 @@ export const stackBadges: { category: string; items: string[] }[] = [
   { category: "Data", items: ["SQLite", "PostgreSQL"] },
   { category: "Infra", items: ["Linux", "Docker", "Docker Compose", "Raspberry Pi", "Cloudflare", "Vercel"] },
   { category: "Tools", items: ["Git", "GitHub", "VS Code", "SSH", "PuTTY"] },
-  { category: "Homelab", items: ["CasaOS", "Portainer", "Jellyfin", "Immich", "Vaultwarden"] },
+  { category: "Homelab", items: ["CasaOS", "Portainer", "Home Assistant", "Jellyfin", "Immich", "Vaultwarden"] },
 ];

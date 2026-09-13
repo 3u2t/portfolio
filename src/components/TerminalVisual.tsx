@@ -13,7 +13,7 @@ const BOOT: Line[] = [
   { text: "uptime --pretty", kind: "cmd" },
   { text: "homelab: up 47 days", kind: "out" },
   { text: "docker ps --format '{{.Names}}'", kind: "cmd" },
-  { text: "jellyfin  immich  vaultwarden", kind: "out" },
+  { text: "jellyfin  immich  homeassistant  vaultwarden", kind: "out" },
   { text: "cloudflared tunnel info", kind: "cmd" },
   { text: "tunnel: healthy · 0 open ports", kind: "out" },
 ];
@@ -25,11 +25,11 @@ const DIRS: Record<string, { dirs: string[]; files: string[] }> = {
   },
   "~/projects": {
     dirs: [],
-    files: ["four04/", "portfolio/", "pi-home-server/"],
+    files: ["infra/", "portfolio/", "pi-home-server/"],
   },
   "~/homelab": {
     dirs: [],
-    files: ["jellyfin/", "immich/", "vaultwarden/", "dust/"],
+    files: ["jellyfin/", "immich/", "homeassistant/", "vaultwarden/", "dust/"],
   },
   "~/homework": { dirs: [], files: [] },
 };
@@ -60,7 +60,7 @@ const CATALOG = [
   "  basics .: help  ls  cd  pwd  cat  echo  clear  history  man",
   "  system .: whoami  hostname  uptime  date  uname  neofetch",
   "             df  free  ps  who  time  cal",
-  "  homelab : docker  ssh  ping  wifi  four04",
+  "  homelab : docker  ssh  ping  wifi  infra",
   "  dev ....: git  npm  node  python  code  google  stackoverflow",
   "             curl  wget  rm  sudo  vim  nano",
   "  fun ....: joke  fortune  quote  cowsay  banner  dice  flip",
@@ -289,7 +289,7 @@ function runCommand(
         ],
       };
     case "ping": {
-      const host = arg || "four04.de";
+      const host = arg || "homelab";
       if (/^(127\.0\.0\.1|localhost)$/.test(host))
         return { out: [O("reply from 127.0.0.1: yes, it's you. it's always been you.")] };
       return {
@@ -361,7 +361,8 @@ function runCommand(
     case "github":
       return { out: [O("github.com/3u2t — star the portfolio. i'm 14 and my love language is github stars.")] };
     case "four04":
-      return { out: [O("four04.de: my little corner of the internet. dns + tunnel + duct tape.")] };
+    case "infra":
+      return { out: [O("infra: private domain + tunnel + duct tape. domain hidden for security.")] };
     case "age":
       return { out: [O("14. old enough to self-host, young enough to blame the wifi.")] };
     case "skills":
@@ -546,7 +547,7 @@ function runCommand(
     case "projects":
       return {
         out: [
-          O("four04.de — my corner of the internet"),
+          O("private infra — my corner of the internet (domain private)"),
           O("portfolio — you're looking at it"),
           O("pi home server — up 47 days and judging"),
         ],

@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
+import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://four04.de";
+  const base = site.website;
   return [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     ...projects.map((p) => ({

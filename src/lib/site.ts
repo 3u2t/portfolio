@@ -4,11 +4,13 @@ export const site = {
   handle: "3u2t",
   location: "Germany",
   github: "https://github.com/3u2t",
-  website: "https://four04.de",
-  // Placeholder — mail on four04.de is not set up yet.
-  // TODO: picks up real inbox once DNS/mail is fixed, then remove the note.
-  emailPlaceholder: "hello@four04.de",
-  emailNote: "placeholder — mail on my domain isn't set up yet",
+  // Canonical URL — injected via env for privacy, fallback is generic placeholder
+  // Set NEXT_PUBLIC_SITE_URL in Vercel (Production) to your private domain.
+  website: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  // Email hidden for privacy — share privately on request
+  emailPlaceholder: "on request",
+  emailNote: "shared privately",
+  websiteLabel: "Website",
 } as const;
 
 export const navLinks = [

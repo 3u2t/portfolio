@@ -34,7 +34,7 @@ export default function Nav() {
             ~
           </span>
           <span className="font-mono text-sm text-zinc-200">
-            tom<span className="text-zinc-500">@four04</span>
+            tom<span className="text-zinc-500">@homelab</span>
           </span>
         </a>
 

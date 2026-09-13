@@ -5,11 +5,10 @@ technology enthusiast from Germany. The site presents real web projects,
 a Raspberry Pi home server, and hands-on Linux / self-hosting / hardware
 interests, honestly and without exaggeration.
 
-`four04.de` is Tom's personal technology ecosystem: the domain and
-infrastructure under which his web projects and self-hosted services live
-(Cloudflare DNS + Tunnel, Docker on Linux/Raspberry Pi). It is both a
-project showcased on this site and the canonical home of the deployed
-portfolio itself.
+Private infrastructure is Tom's personal domain & self-hosted ecosystem
+(private domain via Cloudflare DNS + Tunnel, Docker on Linux/Raspberry Pi).
+It hosts his web projects and homelab services — the exact domain is private
+for security and not listed in this public repo.
 
 ## About the Project
 
@@ -154,8 +153,8 @@ Key files in detail:
 
 Rules for content edits: only link URLs that exist (omit otherwise), only
 list technologies actually used, never add stats/experience/certifications,
-keep everything English-only, and keep the `hello@four04.de` placeholder
-note until mail on the domain genuinely works.
+keep everything English-only, and keep email as “on request” — do not publish
+private domain mail addresses in this public repo.
 
 ## Local Development
 
@@ -209,8 +208,10 @@ and keyboard-tab through nav, cards and links.
 ### Vercel (primary)
 
 Import `3u2t/portfolio` on Vercel with defaults (`npm run build`,
-`.next` output). No environment variables needed. Pushes to the default
-branch redeploy automatically. Canonical URL: `https://four04.de`.
+`.next` output). No environment variables needed for core functionality.
+Pushes to the default branch redeploy automatically. Canonical URL is set via
+`site.website` / `metadataBase` in code and via Vercel domains — not advertised
+in this README for privacy.
 
 ### Raspberry Pi (fallback)
 
@@ -234,10 +235,10 @@ Expose the local container without router port-forwarding:
 cloudflared tunnel --url http://localhost:3000
 ```
 
-For permanent hosting, create a named tunnel and route `four04.de` (or a
-subdomain) to `http://localhost:3000` in the Cloudflare Zero Trust
-dashboard. Never commit tunnel credentials, `config.yml` secrets, or
-`cert.pem` — they stay on the Pi / in Cloudflare, out of Git.
+For permanent hosting, create a named tunnel and route your private
+domain (or subdomain) to `http://localhost:3000` in the Cloudflare Zero Trust
+dashboard. Never commit the domain name, tunnel credentials, `config.yml`
+secrets, or `cert.pem` — they stay on the Pi / in Cloudflare, out of Git.
 
 ### Bot protection
 
@@ -406,7 +407,7 @@ Do not redesign the website. Extend in the same language.
 
 Ideas only — none of these exist yet:
 
-- Real inbox behind `hello@four04.de`, then drop the placeholder note
+- Real inbox (private domain) — then update the “on request” placeholder
 - Optional now-page (`/now`) generated from `src/lib/now.ts`
 - Lightweight analytics without cookies (or none — privacy-first default)
 

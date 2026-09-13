@@ -14,7 +14,7 @@ export async function getGithubRepos(): Promise<GithubRepo[] | null> {
   try {
     const res = await fetch(
       `https://api.github.com/users/${USER}/repos?per_page=12&sort=updated`,
-      { next: { revalidate: 3600 }, headers: { Accept: "application/vnd.github+json" } }
+      { next: { revalidate: 300 }, headers: { Accept: "application/vnd.github+json" } }
     );
     if (!res.ok) return null;
     const data = (await res.json()) as GithubRepo[];

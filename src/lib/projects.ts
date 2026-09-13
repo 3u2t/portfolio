@@ -98,6 +98,24 @@ export const projects: Project[] = [
       "Central hub for my GitHub, projects and contact",
     ],
   },
+  {
+    slug: "gopro-webcam",
+    title: "GoPro Webcam App",
+    tagline: "Linux GUI that turns my GoPro into a real webcam.",
+    status: "building",
+    statusLabel: "working locally",
+    stack: ["Python", "Tkinter", "ffmpeg", "v4l2loopback", "GoPro gpControl API"],
+    links: [],
+    body: [
+      "A small Linux desktop app that puts my GoPro into webcam mode over USB (GoPro Connect) and streams it via ffmpeg into a v4l2loopback device, so any app sees it as a normal webcam.",
+      "It auto-detects the camera over USB ethernet, shows live settings read from the gpControl HTTP API, and lets me pick the local stream bitrate plus a quick preview. Built for my own setup — HERO8 to HERO13 compatible.",
+    ],
+    highlights: [
+      "Auto-detects GoPro over USB, switches webcam mode via gpWebcam API",
+      "ffmpeg pipeline into /dev/video42 with selectable bitrate (5–30 Mbit/s)",
+      "Live camera settings + manual setting IDs, stream pause-safe",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {

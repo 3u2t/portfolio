@@ -419,6 +419,4 @@ default — do not reuse the code or content without asking the owner.
 
 Actively developed personal portfolio. Content (projects, "currently
 building", skills) changes as Tom's work changes; outdated entries are
-removed rather than kept as filler. Notable states: initial Next.js 16
-build with 5 projects → Akropolis Attendorn removed → `food.lazerdim.de`
-removed → Finder App removed, leaving the 3 currently relevant projects.
+removed rather than kept as filler.

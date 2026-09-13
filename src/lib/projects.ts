@@ -80,6 +80,24 @@ export const projects: Project[] = [
       "Cloudflare Tunnel + SSH, basic home networking",
     ],
   },
+  {
+    slug: "lazerdim",
+    title: "lazerdim.de",
+    tagline: "My personal linktree — all my links in one place.",
+    status: "live",
+    statusLabel: "live",
+    stack: ["HTML", "CSS", "JavaScript", "Vercel", "Cloudflare"],
+    links: [{ label: "lazerdim.de", href: "https://lazerdim.de" }],
+    body: [
+      "lazerdim.de is my personal link hub — a clean, fast single-page site that collects my socials, projects and contact links in one place.",
+      "Built as a lightweight static site and deployed on Vercel behind Cloudflare. No framework bloat, just direct links that people actually use.",
+    ],
+    highlights: [
+      "Single-page linktree, fast and mobile-first",
+      "Deployed on Vercel + Cloudflare",
+      "Central hub for my GitHub, projects and contact",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {

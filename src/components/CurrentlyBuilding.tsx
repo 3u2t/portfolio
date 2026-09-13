@@ -38,10 +38,6 @@ export default function CurrentlyBuilding() {
             </Reveal>
           ))}
         </ul>
-        <p className="mt-6 font-mono text-[11px] text-zinc-600">
-          {"//"} edit <span className="text-zinc-500">src/lib/now.ts</span> to
-          update this list
-        </p>
       </div>
     </section>
   );

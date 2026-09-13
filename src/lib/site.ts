@@ -11,6 +11,8 @@ export const site = {
   emailPlaceholder: "on request",
   emailNote: "shared privately",
   websiteLabel: "Website",
+  linktree: "https://lazerdim.de",
+  linktreeLabel: "lazerdim.de",
 } as const;
 
 export const navLinks = [

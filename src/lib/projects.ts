@@ -98,7 +98,25 @@ export const projects: Project[] = [
       "Central hub for my GitHub, projects and contact",
     ],
   },
-
+  {
+    slug: "lanmap",
+    title: "LANMap",
+    tagline: "See what's on your network — self-hosted LAN discovery + monitoring.",
+    status: "building",
+    statusLabel: "building",
+    stack: ["TypeScript", "Node.js", "Express", "React", "Vite", "SQLite", "Docker", "Go"],
+    links: [],
+    github: "https://github.com/3u2t/lanmap",
+    body: [
+      "I run a Raspberry Pi at home and could never remember what was on my LAN — so I built a small self-hosted dashboard that discovers devices, pings the ones I care about, and shows what happened.",
+      "Discovery via ARP/neighbour table + ping sweep + reverse DNS, presence tracking so a single dropped ping doesn't flap, plus latency/packet-loss monitoring with history, network map, gateway/internet checks and alerts — all live over WebSocket.",
+    ],
+    highlights: [
+      "LAN discovery + presence tracking with 3-strike rule",
+      "Monitoring with latency/loss history, uPlot charts and alerts",
+      "Self-hosted: Docker + CasaOS ready, optional Go agent, Windows build",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {

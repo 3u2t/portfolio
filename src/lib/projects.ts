@@ -117,6 +117,25 @@ export const projects: Project[] = [
       "Self-hosted: Docker + CasaOS ready, optional Go agent, Windows build",
     ],
   },
+  {
+    slug: "schriftfrei",
+    title: "Schriftfrei",
+    tagline: "Your text in your handwriting — free, local-first web app.",
+    status: "live",
+    statusLabel: "live",
+    stack: ["TypeScript", "React", "Vite", "Tailwind", "IndexedDB", "PWA"],
+    links: [{ label: "Live Demo", href: "https://schriftfrei.vercel.app" }],
+    github: "https://github.com/3u2t/schriftfrei",
+    body: [
+      "Schriftfrei turns any digital text into your own handwriting. You train glyphs on a canvas with mouse, touch or pen, then render pages live in the browser.",
+      "Everything stays on your device — profiles in IndexedDB, rendering and export (PNG/JPG/SVG/PDF/GoodNotes-PDF) locally, works offline as PWA. No account, no server.",
+    ],
+    highlights: [
+      "Train your handwriting with canvas + training progress",
+      "Export to PNG/JPG/SVG/PDF incl. GoodNotes-optimized PDF",
+      "Local-first: IndexedDB, offline PWA, static hosting",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {

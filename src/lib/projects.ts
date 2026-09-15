@@ -117,25 +117,6 @@ export const projects: Project[] = [
       "Self-hosted: Docker + CasaOS ready, optional Go agent, Windows build",
     ],
   },
-  {
-    slug: "servertimeline",
-    title: "ServerTimeline",
-    tagline: "Self-hosted infrastructure history + network observation.",
-    status: "building",
-    statusLabel: "building",
-    stack: ["TypeScript", "React", "Vite", "Express", "Tauri", "Docker"],
-    links: [],
-    github: "https://github.com/3u2t/servertimeline",
-    body: [
-      "I wanted to know what changed on my homelab and when — so I built a self-hosted timeline that records events, endpoints and containers instead of just showing the current state.",
-      "Local monitoring only: interfaces, listening ports, routes, systemd and Docker, with an event timeline, network view and optional desktop app. No internet scanning, nothing remote.",
-    ],
-    highlights: [
-      "Event timeline: what changed, when, which service and IP",
-      "Network observation with interfaces, endpoints and containers",
-      "Web + desktop (Tauri), Docker-ready, demo mode included",
-    ],
-  },
 ];
 
 export function getProject(slug: string) {

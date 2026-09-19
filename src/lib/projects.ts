@@ -136,6 +136,25 @@ export const projects: Project[] = [
       "Local-first: IndexedDB, offline PWA, static hosting",
     ],
   },
+  {
+    slug: "schlafgarten",
+    title: "Schlafgarten",
+    tagline: "Android sleep tracker — log nights, see patterns.",
+    status: "building",
+    statusLabel: "building",
+    stack: ["Kotlin", "Jetpack Compose", "Material3", "Room", "Android"],
+    links: [],
+    github: "https://github.com/3u2t/Schlafgarten",
+    body: [
+      "Schlafgarten is a native Android app where I log my sleep and see how regular my nights actually are. Entries with times and quality, plus goals I can adjust.",
+      "Built with Kotlin + Compose and Material3, Room for local storage, stats and a heatmap view. Still early (v1.0) — I use it to learn Android properly.",
+    ],
+    highlights: [
+      "Sleep entries + goals with local Room database",
+      "Stats panel + heatmap to spot patterns",
+      "Native Compose UI, tested sleep math and stats",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {

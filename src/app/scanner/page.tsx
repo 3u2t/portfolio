@@ -5,7 +5,6 @@ type Stats = { malicious: number; suspicious: number };
 export default function Scanner() {
   const input = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [alt, setAlt] = useState(false);
   const [consent, setConsent] = useState(false);
   const [message, setMessage] = useState("i'm ahmed");
   const [detail, setDetail] = useState("i scan the files\nyou upload");
@@ -34,7 +33,7 @@ export default function Scanner() {
       if (result.status !== "completed") throw new Error("Analysis is still pending. Try again later.");
       const stats: Stats = result.stats;
       if (typeof stats?.malicious !== "number" || typeof stats?.suspicious !== "number") throw new Error("Invalid analysis report.");
-      setMessage(stats.malicious + stats.suspicious > 0 ? (alt ? "haram" : "not good") : (alt ? "halal" : "looks fine bro"));
+      setMessage(stats.malicious + stats.suspicious > 0 ? "haram" : "halal");
       setDetail(`${stats.malicious} malicious, ${stats.suspicious} suspicious.\nA clean result is not a guarantee.`);
     } catch (error) { setMessage("error bro"); setDetail(error instanceof Error ? error.message : "Scan failed."); }
     finally { setBusy(false); setDone(true); }
@@ -49,7 +48,7 @@ export default function Scanner() {
       </div>
       <div className="mt-2 grid grid-cols-2 gap-2">
         <div><label htmlFor="sample" className="block">Sample</label><div className="mt-1 flex gap-1"><input id="sample" readOnly value={file?.name ?? ""} className="min-w-0 flex-1 border border-zinc-600 bg-black px-1 py-1" /><input ref={input} type="file" className="sr-only" onChange={e => setFile(e.target.files?.[0] ?? null)} /><button type="button" onClick={() => input.current?.click()} className="border border-zinc-500 bg-zinc-800 px-2">Browse</button></div><button type="button" onClick={done ? () => { setDone(false); setMessage("scan more if\nyou want"); setDetail(""); } : scan} disabled={busy} className="mt-2 border border-zinc-500 bg-zinc-800 px-3 py-1 disabled:opacity-50">{done ? "Thanks" : "Scan"}</button></div>
-        <div><label className="flex gap-1"><input type="checkbox" checked={alt} onChange={e => setAlt(e.target.checked)} /> ALT phrases</label><p className="mt-8 text-right text-zinc-500">made by u/myuserisdrowned<br />in Visual Basic</p></div>
+        <div><p className="mt-8 text-right text-zinc-500">made by u/myuserisdrowned<br />in Visual Basic</p></div>
       </div>
     </div>
     <div className="mt-5 max-w-[420px] text-sm text-zinc-400"><label className="flex items-start gap-2"><input type="checkbox" className="mt-1" checked={consent} onChange={e => setConsent(e.target.checked)} /> <span>Unknown files are uploaded to VirusTotal and may be shared with its community. Do not submit confidential or personal files.</span></label><p className="mt-3">Maximum file size: 3 MiB. <a className="underline" href="https://docs.virustotal.com/reference/files-scan" target="_blank" rel="noopener noreferrer">Learn more</a>.</p><p className="mt-3">Based on <a className="underline" href="https://github.com/Johny-adri2/AhmedScanner" target="_blank" rel="noopener noreferrer">AhmedScanner by John</a> · <a className="underline" href="/ahmed/LICENSE.txt">License</a></p></div>

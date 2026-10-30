@@ -26,7 +26,7 @@ export default function Nav() {
         aria-label="Main navigation"
         className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-8"
       >
-        <a href="#home" className="flex items-center gap-2.5">
+        <a href="/#home" className="flex items-center gap-2.5">
           <span
             aria-hidden
             className="flex size-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.05] font-mono text-sm text-emerald-400"
@@ -34,7 +34,7 @@ export default function Nav() {
             ~
           </span>
           <span className="font-mono text-sm text-zinc-200">
-            tom<span className="text-zinc-500">@homelab</span>
+            tom<span className="text-zinc-500">@3u2t</span>
           </span>
         </a>
 

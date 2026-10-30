@@ -20,14 +20,10 @@ export type PaletteEntry = {
 
 export function buildEntries(): PaletteEntry[] {
   const sections: PaletteEntry[] = [
-    { id: "home", kind: "section", label: "Home", hint: "top", keywords: "start landing hero", href: "#home" },
-    { id: "about", kind: "section", label: "About", hint: "whoami", keywords: "about me intro", href: "#about" },
-    { id: "now", kind: "section", label: "Currently building", hint: "now", keywords: "currently working on status", href: "#now" },
-    { id: "projects", kind: "section", label: "Projects", hint: "work", keywords: "projects work apps", href: "#projects" },
-    { id: "stack", kind: "section", label: "Stack & skills", hint: "tech", keywords: "stack skills technologies tools", href: "#stack" },
-    { id: "homelab", kind: "section", label: "Homelab", hint: "hands-on learning", keywords: "experiments linux networking", href: "#homelab" },
-    { id: "github", kind: "section", label: "GitHub", hint: "repos", keywords: "github repositories code", href: "#github" },
-    { id: "contact", kind: "section", label: "Contact", hint: "say hi", keywords: "contact email reach", href: "#contact" },
+    { id: "home", kind: "section", label: "Home", hint: "top", keywords: "start about", href: "/#home" },
+    { id: "scanner", kind: "section", label: "File scanner", hint: "VirusTotal", keywords: "scanner file virus", href: "/scanner" },
+    { id: "projects", kind: "section", label: "Projects", hint: "work", keywords: "projects work apps", href: "/#projects" },
+    { id: "contact", kind: "section", label: "Contact", hint: "say hi", keywords: "contact github", href: "/#contact" },
   ];
   const projectEntries: PaletteEntry[] = projects.map((p) => ({
     id: `project-${p.slug}`,
@@ -39,7 +35,6 @@ export function buildEntries(): PaletteEntry[] {
   }));
   const actions: PaletteEntry[] = [
     { id: "copy-github", kind: "action", label: "Copy GitHub URL", hint: site.github, keywords: "copy github link url", copy: site.github },
-    { id: "copy-email", kind: "action", label: "Copy email (placeholder)", hint: site.emailPlaceholder, keywords: "copy email mail contact", copy: site.emailPlaceholder },
     { id: "open-github", kind: "action", label: "Open GitHub profile", hint: "↗", keywords: "open github profile external", external: site.github },
   ];
   return [...sections, ...projectEntries, ...actions];

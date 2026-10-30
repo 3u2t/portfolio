@@ -39,9 +39,10 @@ export const projects: Project[] = [
     slug: "pi-backup-hub",
     title: "Pi Backup Hub",
     tagline: "A project for automating backups.",
-    status: "building", statusLabel: "repository coming soon",
+    status: "live", statusLabel: "available on GitHub",
     stack: ["Python", "Backups"], links: [],
-    body: ["A backup automation project focused on making recurring backup workflows easier to manage.", "The repository is being prepared for publication."],
+    github: "https://github.com/3u2t/pi-backup-hub",
+    body: ["A backup automation project focused on making recurring backup workflows easier to manage.", "The source code is available on GitHub."],
     highlights: ["Scheduled backups", "Backup workflow automation"],
   },
   {

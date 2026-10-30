@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
+import TerminalVisual from "@/components/TerminalVisual";
 
 export default function Home() {
   return (
@@ -23,6 +24,15 @@ export default function Home() {
             ["Beyond code", "FPV drones, hardware and open source."],
           ].map(([title, text]) => <div key={title} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4"><h3 className="font-medium text-zinc-100">{title}</h3><p className="mt-2 text-sm leading-relaxed text-zinc-400">{text}</p></div>)}
         </div>
+      </section>
+
+      <section id="terminal" aria-labelledby="terminal-heading" className="scroll-mt-24 border-t border-white/[0.08] py-10">
+        <div className="mb-5">
+          <p className="font-mono text-xs text-emerald-400">TOMSHELL</p>
+          <h2 id="terminal-heading" className="mt-2 text-xl font-semibold text-zinc-100">Try the terminal.</h2>
+          <p className="mt-2 text-sm text-zinc-400">A little interactive demo. Type <span className="font-mono text-zinc-200">help</span> to explore.</p>
+        </div>
+        <TerminalVisual />
       </section>
 
       <section id="projects" className="scroll-mt-24 border-t border-white/[0.08] py-10">
@@ -62,6 +72,18 @@ export default function Home() {
           <li>• Exploring Linux and networking</li>
           <li>• Trying AI coding tools while staying hands-on with the code</li>
         </ul>
+      </section>
+
+      <section id="fpv" aria-labelledby="fpv-heading" className="scroll-mt-24 border-t border-white/[0.08] py-10">
+        <p className="font-mono text-xs text-emerald-400">BEYOND SOFTWARE</p>
+        <h2 id="fpv-heading" className="mt-2 text-xl font-semibold text-zinc-100">FPV drones.</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">Flying is only half the fun. I also like the electronics, radio systems and firmware behind it.</p>
+        <ul className="mt-5 grid gap-3 text-sm text-zinc-300 sm:grid-cols-3">
+          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Flying and building</li>
+          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Betaflight and troubleshooting</li>
+          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Radio and hardware</li>
+        </ul>
+        <a href="https://github.com/HKUDS/CLI-Anything/pull/595" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-sm text-emerald-300 hover:underline">Betaflight CLI contribution ↗</a>
       </section>
 
       <section id="contact" className="scroll-mt-24 border-t border-white/[0.08] pt-10">

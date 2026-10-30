@@ -23,6 +23,8 @@ export function buildEntries(): PaletteEntry[] {
     { id: "home", kind: "section", label: "Home", hint: "top", keywords: "start about", href: "/#home" },
     { id: "scanner", kind: "section", label: "File scanner", hint: "VirusTotal", keywords: "scanner file virus", href: "/scanner" },
     { id: "projects", kind: "section", label: "Projects", hint: "work", keywords: "projects work apps", href: "/#projects" },
+    { id: "fpv", kind: "section", label: "FPV", hint: "drones", keywords: "fpv drones betaflight", href: "/#fpv" },
+    { id: "terminal", kind: "section", label: "Terminal", hint: "interactive", keywords: "terminal cli shell", href: "/#terminal" },
     { id: "contact", kind: "section", label: "Contact", hint: "say hi", keywords: "contact github", href: "/#contact" },
   ];
   const projectEntries: PaletteEntry[] = projects.map((p) => ({

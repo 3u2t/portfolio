@@ -35,6 +35,28 @@ export default function Home() {
         <TerminalVisual />
       </section>
 
+      <section id="fpv" aria-labelledby="fpv-heading" className="scroll-mt-24 border-t border-white/[0.08] py-12">
+        <p className="font-mono text-xs text-emerald-400">BEYOND SOFTWARE</p>
+        <h2 id="fpv-heading" className="mt-2 text-2xl font-semibold text-zinc-100">FPV &amp; my setup.</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">Flying is only half the fun. I also enjoy the electronics, radio systems, firmware and troubleshooting behind FPV.</p>
+        <div className="mt-6 rounded-xl border border-white/[0.08] bg-[#111113] p-5 sm:p-6">
+          <h3 className="font-medium text-zinc-100">My equipment</h3>
+          <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              ["Radio", "RadioMaster Pocket · ELRS"],
+              ["Goggles", "Eachine EV800DM"],
+              ["Video transmitter", "Rush Solo Tank VTX"],
+              ["Flight controllers", "GEPRC"],
+              ["Firmware", "Betaflight"],
+              ["Navigation", "GPS"],
+              ["Batteries", "6S LiPo"],
+              ["Charger", "HOTA D6 Pro"],
+            ].map(([label, value]) => <div key={label} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3"><dt className="font-mono text-xs text-zinc-500">{label}</dt><dd className="mt-1 text-sm text-zinc-200">{value}</dd></div>)}
+          </dl>
+        </div>
+        <a href="https://github.com/HKUDS/CLI-Anything/pull/595" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-sm text-emerald-300 hover:underline">Betaflight CLI contribution ↗</a>
+      </section>
+
       <section id="projects" className="scroll-mt-24 border-t border-white/[0.08] py-10">
         <h2 className="text-xl font-semibold text-zinc-100">Projects</h2>
         <p className="mt-2 text-sm text-zinc-400">A few things I've been working on.</p>
@@ -72,18 +94,6 @@ export default function Home() {
           <li>• Exploring Linux and networking</li>
           <li>• Trying AI coding tools while staying hands-on with the code</li>
         </ul>
-      </section>
-
-      <section id="fpv" aria-labelledby="fpv-heading" className="scroll-mt-24 border-t border-white/[0.08] py-10">
-        <p className="font-mono text-xs text-emerald-400">BEYOND SOFTWARE</p>
-        <h2 id="fpv-heading" className="mt-2 text-xl font-semibold text-zinc-100">FPV drones.</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">Flying is only half the fun. I also like the electronics, radio systems and firmware behind it.</p>
-        <ul className="mt-5 grid gap-3 text-sm text-zinc-300 sm:grid-cols-3">
-          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Flying and building</li>
-          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Betaflight and troubleshooting</li>
-          <li className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">• Radio and hardware</li>
-        </ul>
-        <a href="https://github.com/HKUDS/CLI-Anything/pull/595" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-sm text-emerald-300 hover:underline">Betaflight CLI contribution ↗</a>
       </section>
 
       <section id="contact" className="scroll-mt-24 border-t border-white/[0.08] pt-10">

@@ -1,0 +1,19 @@
+// ─── Site-wide constants. Edit here. ───────────────────────────
+export const site = {
+  name: "Tom",
+  handle: "3u2t",
+  location: "Germany",
+  github: "https://github.com/3u2t",
+  // Email hidden for privacy — share privately on request
+  emailPlaceholder: "on request",
+  emailNote: "shared privately",
+} as const;
+
+export const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#stack", label: "Stack" },
+  { href: "#homelab", label: "Homelab" },
+  { href: "#contact", label: "Contact" },
+] as const;
